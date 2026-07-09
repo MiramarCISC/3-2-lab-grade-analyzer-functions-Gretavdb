@@ -11,32 +11,35 @@ int main() {
     cout << "Grade Analyzer" << endl;
     cout << endl;
 
-    cout << "Enter score 1: ";
-    cin >> score1;
-
-    while (!isValidScore(score1)) {
-        cout << "Invalid score. Enter a score from 0 to 100: ";
-        cin >> score1;
-    }
-
+    do {
     cout << "Enter score 2: ";
     cin >> score2;
 
-    while (!isValidScore(score2)) {
-        cout << "Invalid score. Enter a score from 0 to 100: ";
-        cin >> score2;
+    if (!isValidScore(score2)) {
+        cout << "Invalid score. Enter a score from 0 to 100: " << endl;
     }
+} while (!isValidScore(score2));
 
+    do {
     cout << "Enter score 3: ";
     cin >> score3;
 
-    while (!isValidScore(score3)) {
-        cout << "Invalid score. Enter a score from 0 to 100: ";
-        cin >> score3;
+    if (!isValidScore(score3)) {
+        cout << "Invalid score. Enter a score from 0 to 100: " << endl;
     }
+} while (!isValidScore(score3));
+do {
+    cout << "Enter score 3: ";
+    cin >> score3;
+
+    if (!isValidScore(score3)) {
+        cout << "Invalid score. Enter a score from 0 to 100: " << endl;
+    }
+ } while (!isValidScore(score3));
+
 
     double total = calculateTotal(score1, score2, score3);
-    double average = calculateAverage(total, SCORE_COUNT);
+    double average = calculateAverage(total, 3);
     char letterGrade = determineLetterGrade(average);
     bool passing = isPassing(average);
 
